@@ -294,19 +294,19 @@ For our exponential function
       );
     };
 
-Lastly, connect the on_crossbar_connect function to the crossbar router
+Lastly, connect the on_crossbar_connect function to the crossbar router  
 
-  var connect_to_crossbar = (function(){
-    console.log("Connecting to crossbar router");
-    var connection = new autobahn.Connection(
-      {
-        url: 'ws://localhost:8080/ws',
-        realm: 'crossbar-example'
-      }
-    );
-    connection.onopen = on_crossbar_connect;
-    connection.open();
-  })();
+    var connect_to_crossbar = (function(){
+      console.log("Connecting to crossbar router");
+      var connection = new autobahn.Connection(
+        {
+          url: 'ws://localhost:8080/ws',
+          realm: 'crossbar-example'
+        }
+      );
+      connection.onopen = on_crossbar_connect;
+      connection.open();
+    })();
 
 
 All together, the index.html looks like this:
