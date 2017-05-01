@@ -2,8 +2,10 @@
 ## What is crossbar
    > Crossbar.io is an open source networking platform for distributed and microservice applications. It implements the open Web Application Messaging Protocol (WAMP), is feature rich, scalable, robust and secure. Let Crossbar.io take care of the hard parts of messaging so you can focus on your app's features. [http://crossbar.io/]
 
-Crossbar.io is a tool to write distributed applications. It contains a server to route messages, and client libraries in multiple languages.  
-In technical mumbo jumbo the clients talk to each other in a protocol called [WAMP](http://wamp-proto.org/), the router is called [crossbar](http://crossbar.io), and the client libraries are called [Autobahn](http://crossbar.io/autobahn/).
+All programming languages have their strengths and weaknesses. Wouldn't it be nice to write an application using the different strengths of each application, for example the concurrency of node/js, the mathematical power of python/numpy, and somehow let those components communicate and form one distributed application.
+
+Crossbar.io is a tool to do just that. It contains a server to route messages and do the communication, and client libraries in multiple languages.  
+In technical jargon the clients talk to each other in a protocol called [WAMP](http://wamp-proto.org/), the router is called [crossbar](http://crossbar.io), and the client libraries are called [Autobahn](http://crossbar.io/autobahn/).
 
 Officially supported client libraries (a.k.a autobahn) are:
   * Javascript
