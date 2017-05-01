@@ -33,6 +33,7 @@ Inside the router folder, create a new configuration file.
     crossbar init
 
 This will create the a configuration folder (.crossbar) and a web server (web)  
+
     .  
     ├── .crossbar  
     │   ├── config.json  
