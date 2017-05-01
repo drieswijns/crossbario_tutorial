@@ -211,6 +211,7 @@ Start by creating a HTML document that links the autobahn.min.js library and con
   * A submit button
   * An output field
 
+The HTML looks like this  
 
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
         "http://www.w3.org/TR/html4/strict.dtd">
