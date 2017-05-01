@@ -129,7 +129,7 @@ And create a file for your python client
 
     touch client.py
 
-The aim of this paragraph is to create a python function that can be called from all other components connected to our router. Add this to client.py
+The aim of this paragraph is to create a python function that can be called from all other components connected to our router. The function we will be making, *exp(x, y)*, takes the exponential of two input. Add this to client.py
 
     def exp(x, y):
       return float(x)\*\*float(y)
