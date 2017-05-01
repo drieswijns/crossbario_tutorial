@@ -379,6 +379,7 @@ All together, the index.html looks like this:
     </html>
 
 Restart the server  
+
     python -m SimpleHTTPServer 8000
 
 Refresh your browser (localhost:8000) and test the calculator.
