@@ -111,8 +111,9 @@ By default, crossbar will now be starting a websocket server available on ws://l
 # Step 2: Clients
 We will now build two clients: a python back-end, communicating with a javascript front-end.  
 Start by making a folder for you clients  
-    mkdir clients
-    cd clients
+
+    mkdir clients  
+    cd clients  
 
 ## Python back-end
 Within the clients folder, create a folder for you python back-end
