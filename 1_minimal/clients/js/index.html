@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Crossbar minimal web client</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="autobahn.min.js"></script>
+  </head>
+  <body>
+    <div id="target">
+      <div id="input">
+        <h3>Input</h3>
+        <input type="number" id="number_x" placeholder="1"></input>
+        <input type="number" id="number_y" placeholder="0"></input>
+        <input type="button" id="button" value="Calculate"></input>
+      </div>
+      <div id="output">
+        <h3>Output</h3>
+        <input type="number" id="number_z" disabled></input>
+      </div>
+    </div>
+    <script type="text/javascript">
+      (function (){
+        var domElements = {
+          input_number_x: document.getElementById("number_x"),
+          input_number_y: document.getElementById("number_y"),
+          input_button: document.getElementById("button"),
+          output_number_z: document.getElementById("number_z")
+        };
+
+        var on_crossbar_connect = function(session){
+          console.log("Connected to crossbar router");
+          domElements.input_button.addEventListener(
+            "click",
+            function(){
+              var number_x = domElements.input_number_x.value;
+              var number_y = domElements.input_number_y.value;
+
+              session.call(
+                'com.crossbar_example.exp',
+                [number_x, number_y]
+              ).then(
+                 function (res) {
+                    domElements.output_number_z.value = res;
+                 }
+              );
+            }
+          );
+        };
+
+        var connect_to_crossbar = (function(){
+          console.log("Connecting to crossbar router");
+          var connection = new autobahn.Connection(
+            {
+              url: 'ws://localhost:8080/ws',
+              realm: 'crossbar-example'
+            }
+          );
+          connection.onopen = on_crossbar_connect;
+          connection.open();
+        })();
+
+      })();
+    </script>
+  </body>
+</html>
