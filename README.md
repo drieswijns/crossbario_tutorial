@@ -33,24 +33,24 @@ Inside the router folder, create a new configuration file.
     crossbar init
 
 This will create the a configuration folder (.crossbar) and a web server (web)  
-    .
-    ├── .crossbar
-    │   ├── config.json
-    │   ├── key.priv
-    │   └── key.pub
-    ├── README.md
-    └── web
-      ├── backend.html
-      ├── frontend.html
-      ├── index.html
-      └── js
-          ├── autobahn.js
-          ├── autobahn.min.jgz
-          ├── autobahn.min.js
-          ├── CHECKSUM.MD5
-          ├── CHECKSUM.SHA1
-          ├── CHECKSUM.SHA256
-          └── LICENSE
+    .  
+    ├── .crossbar  
+    │   ├── config.json  
+    │   ├── key.priv  
+    │   └── key.pub  
+    ├── README.md  
+    └── web  
+      ├── backend.html  
+      ├── frontend.html  
+      ├── index.html  
+      └── js  
+          ├── autobahn.js  
+          ├── autobahn.min.jgz  
+          ├── autobahn.min.js  
+          ├── CHECKSUM.MD5  
+          ├── CHECKSUM.SHA1  
+          ├── CHECKSUM.SHA256  
+          └── LICENSE  
 
 This tutorial will be focusing on a minimal router, so the web component will not be necessary.
 
