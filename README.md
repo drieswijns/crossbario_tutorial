@@ -117,8 +117,9 @@ Start by making a folder for you clients
 
 ## Python back-end
 Within the clients folder, create a folder for you python back-end
-    mkdir python
-    cd python
+
+    mkdir python  
+    cd python  
 
 The client library for python is called autobahn, there are two flavors of autobahn for python, but we will go with the twisted variant
 
