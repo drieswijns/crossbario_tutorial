@@ -459,7 +459,17 @@ We now need to tell our application to connect to the crossbar router
       })();
     })();
 
-Tell the application to subscribe to new messages, and write the messages to the screen.
+We are now connected to the crossbar router. Next up is listening to messages. You can listen to messages by using crossbar's **subscribe** functionality:
+
+    session.subscribe(
+      'com.x.x',  // the route
+      function(args, kwargs){
+          // handle message
+      }
+    );
+
+
+In our chat application we want to subscribe to new messages, and write the messages to the screen.
 
     var on_crossbar_connect = function(session){
       console.log("Connected to crossbar router");
