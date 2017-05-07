@@ -6,7 +6,7 @@ The application will have a server - clients structure: all messages send by the
 
 # Step 1: Router
 
-We will create a router just like we did in tutorial 1 by making a folder for the router
+We will create a router just like we did in [tutorial 1](https://github.com/drieswijns/crossbario_tutorial/tree/master/1_minimal).
 
     mkdir router
     cd router
