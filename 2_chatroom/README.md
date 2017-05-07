@@ -133,7 +133,7 @@ We will give the server full access, but restrict to public role (chat clients) 
     ]
 
 ## Authentication
-We do no want any random person to be able to register a component as a server, therefore we need to set up some authentication. We will setup *ticket* based authentication, i.e. authentication by means of a shared secret.
+We do no want any random person to be able to register as a server, therefore we need to set up some authentication. We will setup **ticket** based authentication, i.e. authentication by means of a **shared secret**.
 
 In the *config.json* file, restrict access to the server role using ticket based authentication. Access to the public role will remain unauthenticated:
 
