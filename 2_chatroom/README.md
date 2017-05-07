@@ -262,7 +262,7 @@ Now that the router is configured, it can be started with
 By default, crossbar will now be starting a websocket server available on ws://localhost:8080/ws. Keep this terminal window open, and start a new terminal window for the nodejs chat server.
 
 # Step 2: Clients
-We will now build two clients: nodejs chat server application, and a javascript browser chat client
+We will now build two clients: nodejs chat server application, and a javascript browser based chat client.  
 Start by making a folder for the clients
 
     mkdir clients  
