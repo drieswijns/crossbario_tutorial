@@ -1,4 +1,4 @@
-# crossbar.io tutorial
+# crossbar.io basics
 This is part 1 of a series of crossbar.io tutorials.
 
 ## What is crossbar
