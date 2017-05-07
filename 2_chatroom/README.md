@@ -369,7 +369,7 @@ If you see
     Authenticating
     Connection opened
 
-The chat server application is running. Open a new terminal window for the chat client application
+The chat server application is running. Keep it running, and open a new terminal window for the chat client application
 
 ## Chat client
 Our chat client will be a simple HTML/JS application that lives in the browser. Create a new folder for the chat client
@@ -386,7 +386,7 @@ And create index.html
 
     touch index.html
 
-Start with this minimal HTML boilerplate, which has an output field, and two
+Start with this minimal HTML boilerplate, which has an output field, input fields for nickname and message, and send button.
 
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
         "http://www.w3.org/TR/html4/strict.dtd">
