@@ -167,6 +167,94 @@ In the *config.json* file, restrict access to the server role using ticket based
         }
     ]
 
+The full configuration file looks like this
+
+    {
+        "version": 2,
+        "controller": {},
+        "workers": [
+            {
+                "type": "router",
+                "realms": [
+                    {
+                        "name": "crossbar-chat",
+                        "roles": [
+                            {
+                              "name": "server",
+                              "permissions": [
+                                  {
+                                      "uri": "",
+                                      "match": "prefix",
+                                      "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                      },
+                                      "disclose": {
+                                        "caller": true,
+                                        "publisher": true
+                                      },
+                                      "cache": true
+                                  }
+                              ]
+                            },
+                            {
+                                "name": "public",
+                                "permissions": [
+                                    {
+                                        "uri": "",
+                                        "match": "prefix",
+                                        "allow": {
+                                            "call": true,
+                                            "register": false,
+                                            "publish": false,
+                                            "subscribe": true
+                                        },
+                                        "disclose": {
+                                            "caller": true,
+                                            "publisher": true
+                                        },
+                                        "cache": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "transports": [
+                    {
+                        "type": "universal",
+                        "endpoint": {
+                            "type": "tcp",
+                            "port": 8080
+                        },
+                        "websocket": {
+                            "ws": {
+                                "type": "websocket",
+                                "auth": {
+                                    "ticket": {
+                                        "type": "static",
+                                        "principals": {
+                                            "admin": {
+                                                "ticket": "supersecret",
+                                                "role": "server"
+                                            }
+                                        }
+                                    },
+                                    "anonymous": {
+                                        "type": "static",
+                                        "role": "public"
+                                     }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
 Now that the router is configured, it can be started with
 
     crossbar start
