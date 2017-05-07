@@ -4,9 +4,10 @@ This is part 1 of a series of crossbar.io tutorials.
 ## What is crossbar
    > Crossbar.io is an open source networking platform for distributed and microservice applications. It implements the open Web Application Messaging Protocol (WAMP), is feature rich, scalable, robust and secure. Let Crossbar.io take care of the hard parts of messaging so you can focus on your app's features. [http://crossbar.io/]
 
-All programming languages have their strengths and weaknesses. Wouldn't it be nice to write an application using the different strengths of each application, for example the concurrency of node/js, the mathematical power of python/numpy, and somehow let those components communicate and form one distributed application.
+All programming languages have their strengths and weaknesses. Wouldn't it be nice to write an application using the different strengths of each application, for example the concurrency of go, the mathematical power of python/numpy, and somehow let those components communicate and form one distributed application.
 
 Crossbar.io is a tool to do just that. It contains a server to route messages and do the communication, and client libraries in multiple languages.  
+
 In technical jargon the clients talk to each other in a protocol called [WAMP](http://wamp-proto.org/), the router is called [crossbar](http://crossbar.io), and the client libraries are called [Autobahn](http://crossbar.io/autobahn/).
 
 Officially supported client libraries (a.k.a autobahn) are:
@@ -21,12 +22,20 @@ Community supported client libraries are:
   * Ruby
   * [many others](http://crossbar.io/about/Supported-Languages/)
 
+# Post office analogy
+In a way, crossbar.io acts like a post office. Imagine you are a traveling salesman, and you want everyone in the town to know you have arrived with vacuum cleaners. The salesman would walk up to the post office, and ask to deliver a message that he has arrived with vacuum cleaners. The post office then makes copies of his message and passes it on to all interested towns folk. This is called **publish/subscribe** (*pub/sub*), one application publishes a message to post office with a specific **topic**. The post office than delivers that message to all other applications subscribed to that **topic**.
+
+In another scenario you are trying to do you taxes, but all the different tax codes and exemptions and counter exemptions and counter-counter exemptions are making your head hurt. So you walk into the post office and you say: "Here are all my revenues and payments from last year, please deliver it to someone who can do this stuff, and deliver the finished tax documents back to me". This is called **remote procedure call** (*RPC*). One application, the *caller*, delivers input data to the post office, asking for a specific calculation. This data is send to one other application, the *callee* who has registered himself with the post office as being able to do that calculated. The results are then send back to the initial application.
+
+The post office (crossbar.io) is called the **message broker** or **router**. It's responsible to maintain a list of all publishers and subscribers of the *pub/sub* relationships. It must also maintain a list of all possible methods and functions that can be called as a remote procedure call. It pushes messages around and makes sure the results get back to the right applications.
+
+There are many other message brokers like crossbar.io out there, but what makes crossbar special is that it's a **polyglot** (many different client libraries in multiple languages), it connects **different transport levels** (connect HTTP/REST to MQTT to websockets), has multiple methods for **authentication** (make sure an application is who he says he is) and **authorization** (define what applications can access what parts of the system), and is **easy to use**.
+
 
 # Components
-In this tutorial you will set up a *router*, and write a minimal application with a *python* component providing a back-end for a *javascript* front-end in the browser.
+In this tutorial you will set up a *router*, and write a minimal application with a *javascript* front-end remotely calling python procedures (*RPC*) over websockets.
 
 ![diagram](../resources/1_minimal/diagram.jpg)
-
 
 # Step 1: Router
 Start by making a folder for the router
