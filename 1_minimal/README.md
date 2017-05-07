@@ -411,4 +411,4 @@ You've learned how to call python functions from javascript function. This is on
   * Maintain a centralized state with pub/sub routines
   * Fine grained authentication and authorization of methods
 
-In part 2 of this tutorial series we will build a chat application: [A chat application (PUB/SUB and shared secret authentication/authorization)](https://github.com/drieswijns/crossbario_tutorial/tree/master/2_chatroom)
+In part 2 of this tutorial series we will build a chat application, using pub/sub routines and a little bit of authentication+authorization: [A chat application (PUB/SUB and shared secret authentication/authorization)](https://github.com/drieswijns/crossbario_tutorial/tree/master/2_chatroom)
