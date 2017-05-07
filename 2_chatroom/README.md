@@ -9,7 +9,7 @@ In this tutorial we will be building a chat application using crossbars pub-sub 
 
 The main chat interface will be a HTML+JS browser application. Next to the browser application we will have a server: a message send by a client will pass through the server, the server will do profanity checks, seeing we don't want dirty words in our chat, after which the server will send the clean message to all the other clients.
 
-[Diagram](../resources/2_chatroom/diagram.jpg)
+![Diagram](../resources/2_chatroom/diagram.jpg)
 
 # Step 1: Router
 
