@@ -39,10 +39,12 @@ In this tutorial you will set up a *router*, and write a minimal application wit
 
 # Step 1: Router
 Start by making a folder for the router
+
     mkdir router
     cd router
 
 The router can be easily installed from PyPI using pip  
+
     pip install crossbar
 
 Inside the router folder, create a new configuration file.
