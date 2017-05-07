@@ -513,6 +513,6 @@ New messages should now appear on the screen. But we haven't got a way to send m
       );
     };
 
-Now open up two browser windows, and navigate to http://localhost:8000 . Enjoy your chat session!
+We're done now. Open up two browser windows, and navigate to http://localhost:8000. Enjoy your chat session!
 
 ![browser screenshot](../resources/2_chatroom/screenshot_2.png)
