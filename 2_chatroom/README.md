@@ -488,7 +488,7 @@ In our chat application we want to subscribe to new messages, and write the mess
       );
     };
 
-Tell the application to call new-message whenever the send button is pressed.
+New messages should now appear on the screen. But we haven't got a way to send messages yet. We will send messages by calling the 'com.crossbar-chat.new-message' function whenever the send button is pressed, just like we did in tutorial 1.
 
     var on_crossbar_connect = function(session){
       // ...
