@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Crossbar chat client</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="autobahn.min.js"></script>
+  </head>
+  <body>
+    <div id="target">
+      <p id="chatlog"></p>
+      <p>
+        <input type="text" id="nickname" placeholder="Steve"></input><br />
+        <textarea
+          id="message"
+          cols="70"
+          rows="4">
+        </textarea><br />
+        <input type="button" id="send" value="Send"></input>
+      </p>
+    </div>
+    <script type="text/javascript">
+      (function (){
+        var domElements = {
+          input_nickname: document.getElementById("nickname"),
+          input_message: document.getElementById("message"),
+          input_button: document.getElementById("send"),
+          output: document.getElementById("chatlog")
+        };
+
+        var on_crossbar_connect = function(session){
+          console.log("Connected to crossbar router");
+
+          session.subscribe(
+            'com.crossbar-chat.messages',  // the topic we defined in server.js
+            function(args, kwargs){
+              var message = document.createElement("p");
+              message.appendChild(
+                document.createTextNode(kwargs.nickname+" > "+kwargs.message)
+              );
+              domElements.output.appendChild(message);
+            }
+          );
+
+          domElements.input_button.addEventListener(
+            "click",
+            function(){
+              var message = {
+                nickname: domElements.input_nickname.value,
+                message: domElements.input_message.value
+              };
+
+              session.call(
+                'com.crossbar-chat.new-message',
+                [],
+                message
+              ).then(
+                function(){
+                  domElements.input_message.value = "";
+                }
+              );
+            }
+          );
+        };
+
+        (function(){
+          console.log("Connecting to crossbar router");
+          // Connect to crossbar unauthenticated ('anonymous role')
+          var connection = new autobahn.Connection(
+            {
+              url: 'ws://localhost:8080/ws',
+              realm: 'crossbar-chat'
+            }
+          );
+          connection.onopen = on_crossbar_connect;
+          connection.open();
+        })();
+      })();
+    </script>
+  </body>
+</html>
