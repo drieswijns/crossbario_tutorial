@@ -2,6 +2,8 @@
 
 In this tutorial we will be building a chat application using crossbars pub-sub routines.
 
+> This is part 2 of a crossbar.io tutorial series. You can find part 1 here: [Calling python methods from the browser (RPC, register and call)](https://github.com/drieswijns/crossbario_tutorial/tree/master/1_minimal)
+
 The application will have a server - clients structure: all messages send by the clients will pass through the server, and the server will do additional profanity checks.
 
 # Step 1: Router

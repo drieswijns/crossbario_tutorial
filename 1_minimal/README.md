@@ -1,4 +1,6 @@
 # crossbar.io tutorial
+This is part 1 of a series of crossbar.io tutorials.
+
 ## What is crossbar
    > Crossbar.io is an open source networking platform for distributed and microservice applications. It implements the open Web Application Messaging Protocol (WAMP), is feature rich, scalable, robust and secure. Let Crossbar.io take care of the hard parts of messaging so you can focus on your app's features. [http://crossbar.io/]
 
@@ -394,3 +396,5 @@ You've learned how to call python functions from javascript function. This is on
   * Write an application in a multiple of languages, connecting them all together through a crossbar router
   * Maintain a centralized state with pub/sub routines
   * Fine grained authentication and authorization of methods
+
+In part 2 of this tutorial series we will build a chat application: [A chat application (PUB/SUB and shared secret authentication/authorization)](https://github.com/drieswijns/crossbario_tutorial/tree/master/2_chatroom)
