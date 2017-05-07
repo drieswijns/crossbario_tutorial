@@ -19,9 +19,11 @@ We will create a router just like we did in [tutorial 1](https://github.com/drie
     cd router
 
 The router can be easily installed from PyPI using pip  
+
     pip install crossbar
 
 Inside the router folder, create a new configuration file.
+
     crossbar init
 
 This will create the a configuration folder (.crossbar) and a web server (web)  
