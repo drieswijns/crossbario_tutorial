@@ -21,9 +21,12 @@ Community supported client libraries are:
   * Ruby
   * [many others](http://crossbar.io/about/Supported-Languages/)
 
-In this tutorial you will set up a *router*, and write a minimal application with a *python* component providing a back-end for a *javascript* front-end in the browser.  
 
-The complete code can be found in this repo (./1_minimal).
+# Components
+In this tutorial you will set up a *router*, and write a minimal application with a *python* component providing a back-end for a *javascript* front-end in the browser.
+
+![diagram](../resources/1_minimal/diagram.jpg)
+
 
 # Step 1: Router
 Start by making a folder for the router
