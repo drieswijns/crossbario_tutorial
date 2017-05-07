@@ -86,7 +86,7 @@ Within the the config file ./.crossbar/config.json, find and delete the entire w
           }
       }
 
-The router is sub dived into different *realms* (think namespaces), the default realm is called *realm1*. Go ahead and change the realm to a name of you choice. I will be calling it crossbar-example.
+The router is sub dived into different **realms**, only applications withing the same realm can send messages to each other. The default realm is called *realm1*. Go ahead and change the realm to a name of you choice. I will be calling it *crossbar-example*.
 
     "realms": [
         {
