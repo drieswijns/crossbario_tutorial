@@ -250,7 +250,7 @@ This document can now be served with any webserver of your choice, for example
 
 Direct a browser to localhost:8000 and you will see this
 
-![browser screenshot](resources/1_minimal/js_screenshot.png)
+![browser screenshot](../resources/1_minimal/js_screenshot.png)
 
 In the javascript application first find the DOM elements for our input fields, button and output fields.
 
@@ -386,7 +386,7 @@ Restart the server
 
 Refresh your browser (localhost:8000) and test the calculator.
 
-![browser screenshot](resources/1_minimal/js_screenshot_calculated.png)
+![browser screenshot](../resources/1_minimal/js_screenshot_calculated.png)
 
 ## What now?
 You've learned how to call python functions from javascript function. This is only a small subset of the possibilities crossbar.io enables. Here are some more ideas:
