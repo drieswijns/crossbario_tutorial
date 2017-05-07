@@ -65,7 +65,7 @@ Create a realm for our chat application:
     ]
 
 ## Roles (Authorization)
-Unlike previous tutorial, we now have two different *types* of clients connected: one serving as the server, and multiple clients. This is reflected in the config file as two different *roles*, the *server* role and the *public* role.
+Unlike previous tutorial, we now have two different *types* of clients connected: one role serving as the server, and one role for the multiple clients. This is reflected in the config file as two different *roles*, the *server* role and the *public* role.
 
     "realms": [
         {
@@ -87,7 +87,7 @@ Unlike previous tutorial, we now have two different *types* of clients connected
         }
     ]
 
-We will give the server full access, but restrict to public role (chat clients) to pub/sub routines.
+We will give the server full access, but restrict to public role (chat clients) to calling methods, and subscribing to messages.
 
     "roles": [
         {
